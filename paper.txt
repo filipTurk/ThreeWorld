@@ -1,0 +1,358 @@
+% This is samplepaper.tex, a sample chapter demonstrating the
+% LLNCS macro package for Springer Computer Science proceedings;
+% Version 2.21 of 2022/01/12
+%
+\documentclass[runningheads]{llncs}
+%
+\usepackage[T1]{fontenc}
+% T1 fonts will be used to generate the final print and online PDFs,
+% so please use T1 fonts in your manuscript whenever possible.
+% Other font encondings may result in incorrect characters.
+%
+\usepackage{graphicx}
+% Used for displaying a sample figure. If possible, figure files should
+% be included in EPS format.
+%
+% If you use the hyperref package, please uncomment the following two lines
+% to display URLs in blue roman font according to Springer's eBook style:
+%\usepackage{color}
+%\renewcommand\UrlFont{\color{blue}\rmfamily}
+%\urlstyle{rm}
+%
+\begin{document}
+%
+\title{Three World}
+%
+%\titlerunning{Abbreviated paper title}
+% If the paper title is too long for the running head, you can set
+% an abbreviated paper title here
+%
+\author{Filip Turk}
+%
+\authorrunning{F. Author et al.}
+% First names are abbreviated in the running head.
+% If there are more than two authors, 'et al.' is used.
+%
+\institute{Faculty of Computer and Information Science\and University of Ljubljana, Slovenia} 
+%
+\maketitle              % typeset the header of the contribution
+%
+\begin{abstract}
+This project integrates a Flask backend with a Three.js-based interactive virtual world to create an immersive experience driven by real-time facial and hand tracking. The Flask backend processes input from the user's camera, detecting facial landmarks and hand positions, which are then transmitted to the Three.js frontend. The detected data enables dynamic interactions within a 3D environment, allowing users to manipulate objects and navigate between two distinct, interactive scenes. Each scene offers unique elements to engage with, showcasing different forms of interactivity based on the user's movements and gestures.
+
+In the first scene, users can toggle lights on and off on spherical objects by either shooting vectors or directly interacting with the spheres. These interactions provide an engaging introduction to the virtual space. The second scene allows users to draw within the environment and interact with post-processing effects, such as glitch effects, enhancing the scene's visual dynamics and interactive possibilities. This dual-scene design emphasizes user immersion and highlights the creative potential of gesture-based inputs.
+
+The project combines computer vision, web technologies, and 3D rendering to explore the intersection of technology and interactivity. By blending precise tracking and artistic design, it highlights the possibilities of integrating human-computer interaction techniques into 3D virtual environments, paving the way for innovative applications in web design, gaming and virtual experiences.
+
+\keywords{Three.js  \and Computer vision \and Interactivity.}
+\end{abstract}
+%
+%
+%
+\section{Introduction}
+\subsection{A Subsection Sample}
+Please note that the first paragraph of a section or subsection is
+not indented. The first paragraph that follows a table, figure,
+equation etc. does not need an indent, either.
+
+Subsequent paragraphs, however, are indented.
+
+\subsubsection{Sample Heading (Third Level)} Only two levels of
+headings should be numbered. Lower level headings remain unnumbered;
+they are formatted as run-in headings.
+
+\paragraph{Sample Heading (Fourth Level)}
+The contribution should contain no more than four levels of
+headings. Table~\ref{tab1} gives a summary of all heading levels.
+
+\begin{table}
+\caption{Table captions should be placed above the
+tables.}\label{tab1}
+\begin{tabular}{|l|l|l|}
+\hline
+Heading level &  Example & Font size and style\\
+\hline
+Title (centered) &  {\Large\bfseries Lecture Notes} & 14 point, bold\\
+1st-level heading &  {\large\bfseries 1 Introduction} & 12 point, bold\\
+2nd-level heading & {\bfseries 2.1 Printing Area} & 10 point, bold\\
+3rd-level heading & {\bfseries Run-in Heading in Bold.} Text follows & 10 point, bold\\
+4th-level heading & {\itshape Lowest Level Heading.} Text follows & 10 point, italic\\
+\hline
+\end{tabular}
+\end{table}
+
+
+\noindent Displayed equations are centered and set on a separate
+line.
+\begin{equation}
+x + y = z
+\end{equation}
+Please try to avoid rasterized images for line-art diagrams and
+schemas. Whenever possible, use vector graphics instead (see
+Fig.~\ref{fig1}).
+
+\begin{figure}
+\includegraphics[width=\textwidth]{fig1.eps}
+\caption{A figure caption is always placed below the illustration.
+Please note that short captions are centered, while long ones are
+justified by the macro package automatically.} \label{fig1}
+\end{figure}
+
+\begin{theorem}
+This is a sample theorem. The run-in heading is set in bold, while
+the following text appears in italics. Definitions, lemmas,
+propositions, and corollaries are styled the same way.
+\end{theorem}
+%
+% the environments 'definition', 'lemma', 'proposition', 'corollary',
+% 'remark', and 'example' are defined in the LLNCS documentclass as well.
+%
+\begin{proof}
+Proofs, examples, and remarks have the initial word in italics,
+while the following text appears in normal font.
+\end{proof}
+For citations of references, we prefer the use of square brackets
+and consecutive numbers. Citations using labels or the author/year
+convention are also acceptable. The following bibliography provides
+a sample reference list with entries for journal
+articles~\cite{ref_article1}, an LNCS chapter~\cite{ref_lncs1}, a
+book~\cite{ref_book1}, proceedings without editors~\cite{ref_proc1},
+and a homepage~\cite{ref_url1}. Multiple citations are grouped
+\cite{ref_article1,ref_lncs1,ref_book1},
+\cite{ref_article1,ref_book1,ref_proc1,ref_url1}.
+
+\begin{credits}
+\subsubsection{\ackname} A bold run-in heading in small font size at the end of the paper is
+used for general acknowledgments, for example: This study was funded
+by X (grant number Y).
+
+\subsubsection{\discintname}
+It is now necessary to declare any competing interests or to specifically
+state that the authors have no competing interests. Please place the
+statement with a bold run-in heading in small font size beneath the
+(optional) acknowledgments\footnote{If EquinOCS, our proceedings submission
+system, is used, then the disclaimer can be provided directly in the system.},
+for example: The authors have no competing interests to declare that are
+relevant to the content of this article. Or: Author A has received research
+grants from Company W. Author B has received a speaker honorarium from
+Company X and owns stock in Company Y. Author C is a member of committee Z.
+\end{credits}
+
+% ---- SECTIONS ----
+
+\section{Introduction}
+\subsection{Purpose and Objectives}
+The primary purpose of this project is to create an engaging and enjoyable interactive experience that allows users to explore and interact with virtual environments using natural gestures. By leveraging real-time face and hand tracking, the project bridges the gap between the physical and digital worlds, making virtual interactions more intuitive and immersive. Users can navigate between different virtual scenes, each offering unique interactions and mechanics that showcase the potential of combining computer vision and 3D rendering technologies.
+
+\subsection{Background}
+This project employs a combination of server-side and client-side technologies to achieve real-time responsiveness and seamless interactivity. The backend is developed using Python's Flask framework, which handles input processing, communication between the user's camera and the virtual world, and overall system logic. On the frontend, the Three.js library is used to render dynamic 3D environments directly in the browser. Three.js provides powerful tools for creating realistic 3D graphics and implementing interactive mechanics, making it an ideal choice for building a browser-based virtual experience. By integrating these technologies, the project demonstrates the feasibility of real-time interaction in browser-based virtual environments.
+
+\subsection{Overview}
+The final implementation of the project consists of two distinct virtual scenes, each with its own interactive features:
+
+Scene One: In this environment, users interact with glowing spheres that can be toggled on or off using hand gestures. Users can also shoot vectors at the spheres, allowing them to control the light effects dynamically. This scene emphasizes precision and interaction through intuitive gestures.
+
+Scene Two: This environment introduces creative and experimental interactions. Users can draw directly in the scene and interact with post-processing effects such as glitch effects. These effects add an artistic dimension, highlighting how input can influence not just objects but also the atmosphere and visual presentation of a scene.
+
+Together, these scenes showcase the versatility of the system and the possibilities for creating immersive and interactive 3D worlds using modern web technologies.
+
+\section{Related Work}
+\subsection{Technological Comparison}
+The integration of computer vision with real-time 3D rendering in a browser-based environment is a relatively unexplored domain. While there are existing applications that leverage computer vision for gesture recognition and Three.js for creating 3D visualizations, these implementations are often limited to specific use cases, such as gaming, data visualization, or virtual reality simulations.
+
+What sets this project apart is its unique artistic approach to merging these technologies. By focusing on creative and experimental interactions—such as toggling glowing spheres with gestures, shooting vectors, and manipulating post-processing effects—this work offers a fresh perspective on how computer vision and Three.js can be used to create immersive and interactive art experiences.
+
+To the best of our knowledge, there are few, if any, publicly available examples on the internet that combine these technologies in such an innovative manner. This project's emphasis on user-driven exploration and environmental manipulation through natural gestures highlights its novelty and sets it apart as a unique contribution to the intersection of computer vision, interactive design, and browser-based 3D rendering.
+
+\section{System Architecture}
+\subsection{Overview of the System}
+The system architecture is composed of two main components: the backend and the frontend. The backend is responsible for processing and serving the real-time data from computer vision models, while the frontend leverages this data to render an interactive 3D world in the browser. Communication between the backend and frontend is handled using socket connections, enabling seamless real-time interactions within the virtual environment.
+
+\subsection{Backend Design}
+The backend of the application is built using Python's Flask framework, which serves as the server for processing requests and handling client communication. Google’s MediaPipe library plays a crucial role in the backend by providing tools for detecting and tracking facial and hand landmarks in real-time. These landmarks are essential for capturing user gestures and facial movements.
+
+Once the landmark data is processed by MediaPipe, it is forwarded to the frontend through a WebSocket connection. The backend also handles gesture recognition using MediaPipe's hand tracking model, which interprets specific hand movements as interactions within the virtual world. All computational tasks related to landmark detection and gesture recognition are performed on the backend, ensuring smooth performance and minimal latency.
+
+\subsection{Frontend Design}
+The frontend is powered by the Three.js library, which is used to render the 3D world directly in the browser. Three.js enables the creation of virtual objects, camera manipulation, and interactive scenes in a seamless and visually appealing way. The landmark data received from the backend is parsed and used to create virtual points in the 3D space, representing the user’s face and hands. These points are rendered and tracked in real time, allowing users to interact with the environment through their gestures and facial movements.
+
+The frontend design focuses on providing an immersive and intuitive experience, where the user's physical actions are translated into interactions with the virtual world. This is achieved by continuously updating the 3D points to reflect the real-time position of the user’s face and hands, enabling interaction with the objects and effects present in the virtual environment.
+
+\section{Scene Design and Features}
+
+\subsection{Scene One: Light Control and Vectors}
+
+\subsubsection{Concept}
+In Scene One, you are placed at the center of a cosmic space where you can interact with glowing spheres (representing planets) using your hand gestures. These spheres can be turned on and off, creating a visually satisfying effect. The experience is further enriched by the ability to shoot light vectors into space, which interact with the glowing orbs. By pointing in different directions, you can manipulate the light sources in the scene. The camera constantly moves around you, enhancing the feeling of being in motion and adding to the immersion.
+
+\subsubsection{Implementation}
+The following hand gestures are mapped to specific interactions within Scene One. These gestures are tracked using hand landmark data from MediaPipe and are processed in the backend, allowing real-time interactions in the frontend. Below is a table outlining each gesture and its associated action:
+
+\begin{table}[h!]
+\caption{Hand Gestures and Corresponding Actions in Scene One}\label{tab1}
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Hand Gesture} & \textbf{Action} \\ \hline
+Open Palm & Turn on glowing spheres (planets) \\ \hline
+Closed Fist & Turn off glowing spheres \\ \hline
+Victory (Two Fingers Up) & Remove arrows \\ \hline
+Pointing Up & Shoot light vectors in random directions \\ \hline
+Thumb Up & Zoom in the scene \\ \hline
+Thumb Down & Zoom out the scene \\ \hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Scene Two: Drawing and Post-Processing Effects}
+
+In scene two, you are immersed in a virtual environment surrounded by lines that give the impression of having been drawn in space. These lines subtly indicate the possibility of drawing in the scene by pointing the finger upward. However, due to the challenges encountered with the drawing implementation, this scene eventually evolved into one focused on manipulating post-processing effects.
+
+\subsubsection{Concept}
+In this scene, the user interacts with the virtual space using hand gestures to control and manipulate various visual effects. Initially designed for drawing, the scene shifted to focus on dynamic and real-time post-processing effects. The drawing functionality, though not as successful as anticipated, still serves as a gesture-based interaction method. The scene now emphasizes creating engaging visual distortions, such as glitches, using simple hand movements. Users are given the ability to control the intensity of these effects with gestures, adding a layer of interactivity and artistic expression to the virtual environment.
+
+\subsubsection{Implementation}
+The gestures in scene two are mapped to various actions within the environment. Below are the key hand gestures and their corresponding actions in this scene:
+
+\begin{table}[h!]
+\caption{Hand Gestures and Corresponding Actions in Scene Two}\label{tab2}
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Hand Gesture} & \textbf{Action} \\ \hline
+Pointing Up & Begin drawing in space \\ \hline
+Closed Fist & Stop drawing \\ \hline
+Thumb Up & Zoom in the scene \\ \hline
+Thumb Down & Zoom out the scene \\ \hline
+Open Palm & Resume camera movement \\ \hline
+Closed Fist & Stop camera movement \\ \hline
+Victory (Two Fingers Up) & Apply a wild glitch effect \\ \hline
+ILoveYou (Hand Sign) & Apply a normal glitch effect \\ \hline
+\end{tabular}
+\end{table}
+
+
+\section{Technical Challenges and Solutions}
+
+Throughout the development of the project, several technical challenges were encountered and successfully addressed. These challenges were mainly related to landmark calculation and positioning, socket data transmission speed, and rendering multiple scenes. Each of these issues required a tailored solution to ensure the interactive experience was smooth and engaging.
+
+\subsection{Landmark Calculation and Camera Positioning}
+One of the first challenges encountered was calculating the landmark and camera positions in space. Initially, every time a new point was read from the socket, the old point object was deleted, and a new object was created in its place. This approach led to inefficiencies and a laggy experience. To optimize this process, the solution was to keep the same point object in memory and simply update its position in space. This minimized the overhead of constantly creating and deleting objects. Additionally, since the entire process was being executed in the browser, scaling the points appropriately relative to the screen size became necessary. A calibration step was implemented to ensure that the positions of the landmarks were correctly mapped to the 3D space, allowing for proper visual representation and interaction.
+
+\subsection{Socket Data Transmission Speed}
+The second major challenge was the delay between real-life movements and their corresponding visual representation on the screen. Initially, there was a noticeable lag in the movement synchronization, likely due to the large number of points that the MediaPipe library needed to process. Since accurate tracking of hand and facial landmarks required processing a significant number of points, this added a processing overhead. To address this, a solution was implemented to send lower-quality frames to MediaPipe, effectively reducing the number of points being tracked per frame. Additionally, frame skipping was introduced, where some frames were deliberately skipped to reduce the processing load and enable smoother performance. These adjustments resulted in more responsive real-time tracking, improving the overall user experience.
+
+\subsection{Rendering Multiple Scenes}
+A third challenge involved structuring the frontend to allow for seamless rendering of multiple scenes. Each scene required specific objects, animations, and interactions, which had to be loaded dynamically. Initially, the scenes were loaded synchronously, which led to delays and unnecessary waiting times. To address this, a more efficient solution was implemented by creating separate scene scripts and loading them asynchronously. This approach allowed the scenes to be prepared and loaded in the background as soon as the correct gesture was detected. This method ensured that scene transitions were smooth, with the objects in the new scene ready for interaction as soon as it was displayed, without waiting for the loading process to complete.
+
+\subsection{Tracking Accuracy}
+Maintaining accurate tracking of the user's face and hand landmarks was critical for seamless interaction with the virtual environment. Overcoming potential tracking errors due to the camera's angle or lighting conditions required constant fine-tuning of the tracking algorithms. In some cases, we used smoothing techniques to reduce jitter in landmark detection and adjusted the detection range to ensure robustness across different user scenarios.
+
+\subsection{Performance Optimization}
+Optimizing the performance of the entire system was crucial, especially when dealing with real-time rendering and tracking. Reducing the frequency of data transmissions, compressing data when possible, and optimizing the drawing and rendering pipeline helped to improve overall performance. The use of efficient algorithms and the reduction of computational complexity was key in maintaining high frame rates while ensuring accurate user input and smooth transitions.
+
+\subsection{Scene Transitions}
+Ensuring smooth transitions between different scenes was a significant challenge, especially considering the complexity of the interactions in each scene. The solution was to implement asynchronous scene loading, which allowed for transitions to occur without noticeable delays. The asynchronous loading process ensured that the necessary assets and objects were fully loaded before a scene was presented to the user, allowing for fluid transitions without interruptions.
+
+
+\section{User Experience and Evaluation}
+
+The user experience was largely influenced by the performance and accuracy of the system, and while the project showed promising results, several areas for improvement were identified during testing.
+
+\subsection{Point Transmission Speed}
+One of the primary areas for improvement was the lag between real-life hand movements and their corresponding visual representation on the screen. While the system performed reasonably well, some delays in point transmission were still noticeable. These delays were particularly evident during fast movements or when multiple points were being tracked simultaneously. To address this, future optimizations could focus on refining the point calculation algorithm and implementing more sophisticated interpolation techniques between landmark positions. These adjustments could improve the responsiveness and synchronization of real-time movements, providing a more seamless user experience.
+
+\subsection{Drawing Experience in Scene Two}
+The drawing experience in scene two faced conceptual and technical challenges. The moving camera caused a disorienting perspective, making it difficult for users to see what they were drawing. Additionally, the MediaPipe library struggled with correctly detecting the "finger-up" gesture, which prevented the drawing action from functioning as expected. This inconsistency made the interaction frustrating for users, as the system did not behave in the way they anticipated. A potential solution to this issue would involve introducing a timer-based approach: once a drawing gesture is detected (e.g., finger up), the system could stay in drawing mode for at least one second and extend this duration as long as the finger remains raised. This would allow for more intuitive and predictable interaction, reducing frustration.
+
+\subsection{Testing}
+During testing, various aspects of the system were evaluated, including gesture detection, scene transitions, and point rendering performance. User feedback was collected through direct interaction with the system, and observations were made regarding the ease of use and the effectiveness of the interactions. The testing process helped identify specific areas where the user experience could be improved, such as gesture recognition consistency and scene stability under different conditions (e.g., lighting or camera angle).
+
+\subsection{Observations}
+Several key observations were made during the testing phase. First, while the overall interaction model was engaging, certain gestures (like the "finger-up" gesture for drawing) were not always reliably detected, particularly in non-ideal lighting conditions. This highlighted the need for more robust gesture recognition. Second, the moving camera in scene two made it difficult for users to maintain a consistent point of reference, leading to occasional confusion when drawing or interacting with objects in the scene. Lastly, users reported that the lag between hand movements and on-screen actions was noticeable enough to detract from the immersive experience, especially during fast or fluid gestures.
+
+\subsection{Improvements}
+To enhance the user experience, several improvements can be made:
+- **Optimizing Point Transmission**: By refining the point calculation and interpolation algorithms, smoother and more responsive real-time tracking can be achieved.
+- **Gesture Recognition**: Improving the accuracy and reliability of the "finger-up" gesture for drawing and other gestures could significantly improve the user interaction.
+- **Camera Movement**: Stabilizing the camera or providing a more predictable and controlled camera movement could reduce disorientation and improve the drawing experience.
+- **Feedback Mechanism**: Adding visual or haptic feedback when gestures are recognized or when the system transitions between modes could improve the user's sense of control and reduce confusion.
+- **Scene Refinements**: Further conceptual improvements to the interaction model in scene two, such as adding a more stable drawing surface or enhancing the drawing feedback, would improve the drawing experience.
+
+By addressing these challenges, the system could provide a smoother, more intuitive, and more enjoyable interactive experience for users.
+
+
+\section{Applications and Future Work}
+
+This project has the potential to be adapted for various innovative applications, particularly in the realm of interactive web design and artistic expression. The ability to control and interact with a 3D environment through hand gestures opens up new possibilities for user interfaces, virtual environments, and immersive web experiences.
+
+\subsection{Applications}
+The interactive nature of this project could be applied in several fields. One potential application is the creation of **artistic web designs**, where users can engage with dynamic 3D environments in real-time. For example, artists could design virtual galleries or installations where visitors interact with the artwork through hand gestures, offering an innovative form of digital art. Additionally, the technology could be used in **gesture-based web navigation**, allowing users to interact with websites or applications by using their hands instead of traditional input devices such as a mouse or keyboard. This could provide a more immersive and intuitive browsing experience, particularly in virtual reality (VR) or augmented reality (AR) environments.
+
+Furthermore, the gesture recognition system could be integrated into **online learning platforms**, where students interact with virtual objects or simulations to learn complex concepts through hands-on experience. This could enhance engagement and provide an alternative to traditional methods of teaching.
+
+\subsection{Future Work}
+There are numerous directions for future work that could significantly enhance the capabilities of this project. 
+
+One key area is improving **gesture recognition accuracy**. While the system currently performs well, there are still some challenges in reliably detecting certain gestures, especially in diverse lighting conditions. Future work could involve training the gesture recognition model with a wider range of hand poses and gestures, or utilizing more advanced machine learning techniques to enhance detection accuracy.
+
+Another area for improvement is **scene complexity**. The current scenes are relatively simple, but expanding them to include more interactive elements—such as physics-based interactions, multiplayer support, or more intricate environments—could increase the richness and immersion of the experience. This could involve integrating more advanced technologies like **WebXR** for cross-platform VR/AR support or exploring **real-time collaboration** features, where multiple users can interact in the same virtual space.
+
+Additionally, **performance optimization** is another key area for future work. As the complexity of the scenes and gestures increases, the system may experience performance bottlenecks, particularly in terms of latency and resource consumption. Optimizing the backend communication and refining the frontend rendering engine could ensure smoother interactions, even with more complex or resource-heavy scenes.
+
+Finally, **expanding the artistic possibilities** by introducing more creative features, such as dynamic lighting effects, texture manipulation, or advanced post-processing filters, could help realize the project’s full potential as a creative tool. This could allow users to create and manipulate virtual environments in more visually stunning and unique ways.
+
+Overall, the project holds great potential for artistic, educational, and entertainment purposes, and future work could lead to an even more engaging and powerful interactive experience.
+
+
+\section{Conclusion}
+
+This project aimed to create an interactive and immersive experience by combining computer vision, hand gesture recognition, and 3D virtual environments. The goal was to enable users to interact with and manipulate objects in a virtual world using real-time gestures, with the added complexity of scene transitions and dynamic content. By leveraging Flask for the backend and Three.js for 3D rendering, the project successfully integrates real-time user input with virtual environments, offering a unique and engaging experience.
+
+The implementation involved detecting hand and face landmarks through Google's MediaPipe library, with gesture recognition allowing users to control various aspects of the virtual environment, such as turning on glowing spheres, drawing in space, and manipulating post-processing effects. The project also explored scene transitions, ensuring smooth interactions between different virtual worlds based on user gestures.
+
+This project contributes to the growing field of interactive web design, where real-time input, such as hand gestures, is used to control and manipulate virtual environments. It demonstrates the potential of integrating computer vision with web-based 3D rendering to create dynamic and immersive user experiences. By combining these technologies in a novel way, the project pushes the boundaries of what can be achieved in terms of interactivity and user engagement, offering new possibilities for future applications in art, education, and virtual reality.
+
+Overall, the project emphasizes the significance of real-time user input in creating adaptive, engaging virtual spaces and showcases the potential for gesture-based interaction in web and application development.
+
+
+%
+% ---- Bibliography ----
+%
+% BibTeX users should specify bibliography style 'splncs04'.
+% References will then be sorted and formatted in the correct style.
+%
+% \bibliographystyle{splncs04}
+% \bibliography{mybibliography}
+%
+\begin{thebibliography}{8}
+\bibitem{ref_article1}
+Author, F.: Article title. Journal \textbf{2}(5), 99--110 (2016)
+
+\bibitem{ref_lncs1}
+Author, F., Author, S.: Title of a proceedings paper. In: Editor,
+F., Editor, S. (eds.) CONFERENCE 2016, LNCS, vol. 9999, pp. 1--13.
+Springer, Heidelberg (2016). \doi{10.10007/1234567890}
+
+\bibitem{ref_book1}
+Author, F., Author, S., Author, T.: Book title. 2nd edn. Publisher,
+Location (1999)
+
+\bibitem{ref_proc1}
+Author, A.-B.: Contribution title. In: 9th International Proceedings
+on Proceedings, pp. 1--2. Publisher, Location (2010)
+
+\bibitem{ref_url1}
+LNCS Homepage, \url{http://www.springer.com/lncs}, last accessed 2023/10/25
+\end{thebibliography}
+\end{document}
+
+\subsection{Background}
+This project employs a combination of server-side and client-side technologies to achieve real-time responsiveness and seamless interactivity. The back-end is developed using Python's Flask framework, which handles input processing, communication between the user's camera and the virtual world, and overall system logic. On the front-end, the Three.js library is used to render dynamic 3D environments directly in the browser. Three.js provides powerful tools for creating 3D graphics and implementing interactive mechanics, making it an ideal choice for building a browser-based virtual experience. By integrating these technologies, the project demonstrates the feasibility of real-time interaction in browser-based virtual environments.
+
+\subsection{Overview}
+The final implementation of the project consists of two distinct virtual scenes, each with its own interactive features:
+
+Scene One: In this environment, users interact with glowing orbs that can be toggled on or off using hand gestures. Users can also shoot rays of light at the spheres, allowing them to control the light effects dynamically. This scene emphasizes precision and interaction through intuitive gestures.
+
+Scene Two: This environment introduces creative and experimental interactions. Users can draw directly in the scene and interact with post-processing effects such as glitch effects. These effects add an artistic dimension, highlighting how input can influence not just objects but also the atmosphere and visual presentation of a scene.
